@@ -25,8 +25,7 @@ function App() {
 
   return (
     <div>
-      <h2>Let's get started!</h2>
-      <p>This is also visibile</p>
+      
       {expenses.map((expense) => (
         <ExpenseItem
           key={expense.id}

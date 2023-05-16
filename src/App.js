@@ -1,4 +1,5 @@
-import ExpenseItem from "./components/ExpenseItem"
+import Expenses from './components/Expenses/Expenses';
+
 function App() {
   const expenses = [
     {
@@ -6,7 +7,6 @@ function App() {
       title: 'Toilet Paper',
       amount: 94.12,
       date: new Date(2020, 7, 14),
-      location:"Walmart"
     },
     { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
     {
@@ -25,17 +25,8 @@ function App() {
 
   return (
     <div>
-      
-      {expenses.map((expense) => (
-        <ExpenseItem
-          key={expense.id}
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-          locationOfExpenditure={expense.location}
-        />
-      ))}
-
+      <h2>Expense Tracker</h2>
+      <Expenses items={expenses} />
     </div>
   );
 }

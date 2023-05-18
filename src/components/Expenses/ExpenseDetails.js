@@ -2,6 +2,7 @@ import "./ExpenseItem.css"
 
 function ExpeseDetails(props){
     return(
+        
        
             <div className="expense-item__description">
          

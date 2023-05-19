@@ -1,6 +1,7 @@
 import Expenses from './components/Expenses/Expenses';
-import ExpenseForm from './components/ExpenseForm/ExpenseForm';
-function App(expeses) {
+import NewExpense from './components/ExpenseForm/NewExpense';
+
+function App() {
   let expenses = [
     {
       id: 'e1',
@@ -22,11 +23,11 @@ function App(expeses) {
       date: new Date(2021, 5, 12),
     },
   ];
-  expenses = {...expenses,...expeses}
+  
   return (
     <div>
-      <h2>Expense Tracker</h2>
-      <ExpenseForm/>
+   
+      <NewExpense />
       <Expenses items={expenses} />
     </div>
   );

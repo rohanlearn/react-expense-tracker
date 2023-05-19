@@ -3,27 +3,51 @@ import ExpenseItem from '../Expenses/ExpenseItem';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-     
-    const [title,enteredTitle]=useState("Empty")
-    const [amount,enteredAmount]=useState("noAmount")
-    const [date,enteredDate]=useState("noDate")
+     const [title,setEnteredTitle]=useState("")
+     const [amount,setEnteredAmount]=useState("")
+     const [date,setEnteredDate]=useState("")
+    // const [userInput,setUserInput]=useState({
+    //     title:"",
+    //     amount:"",
+    //             date:"" 
+    // })
+  
+
     let titlechg=(e)=>{
+        setEnteredTitle(e.target.value)
        
-        enteredTitle(e.target.value)    
+        // setUserInput({...userInput,title:e.target.value});   
+        // setUserInput((prevState)=>{
+        //     return{...prevState,title:e.target.value}});    
 
     }
     let amountchg=(e)=>{
+        setEnteredAmount(e.target.value)
        
-        enteredAmount(e.target.value)    
-        console.log(amount)
+        // setUserInput({...userInput,amount:e.target.value});   
+        
     }
     let datechg=(e)=>{
-       
-        enteredDate(e.target.value)    
-        console.log(date)
+        setEnteredDate(e.target.value)
+        // setUserInput({...userInput,date:e.target.value});    
+        
     }
     
+    const formSubmit = (e)=>{
+      e.preventDefault();
     
+
+        let tit = document.getElementById("title").value
+        let amt = document.getElementById("amount").value
+        let dat = document.getElementById("date").value
+
+        let newExpense = {
+            title: tit,
+            amount: amt,
+            date: dat,
+        }
+        console.log(newExpense)
+    }
   return (
     <form>
       <div className='new-expense__controls'>
@@ -41,7 +65,7 @@ const ExpenseForm = () => {
         </div>
       </div>
       <div className='new-expense__actions'>
-        <button type='submit' >Add Expense</button>
+        <button type='submit' onClick={formSubmit}>Add Expense</button>
       </div>
     </form>
   );

@@ -8,7 +8,7 @@ function ExpeseDetails(props){
          
                 <h2>{props.title}</h2>
                 <h2>{props.locationOfExpenditure}</h2>
-                <div className="expense-item__price">{props.amount}</div>
+                <div className="expense-item__price">${props.amount}</div>
             </div>
       
     )

@@ -1,7 +1,9 @@
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/ExpenseForm/NewExpense';
+import { useState } from 'react';
 
 function App() {
+  
   let expenses = [
     {
       id: 'e1',
@@ -23,12 +25,26 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+  const [newExpense,updateExpense] = useState(expenses)
+  const AddExpenseHandler= (data)=>{
+    
+    
+    
+     updateExpense((prev)=>{
+        return [...prev,data]
+        
+        
+      })
+
+
+  }
+
   
   return (
     <div>
    
-      <NewExpense />
-      <Expenses items={expenses} />
+      <NewExpense sendtoApp={AddExpenseHandler}/>
+      <Expenses items={newExpense} />
     </div>
   );
 }

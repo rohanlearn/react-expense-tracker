@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import ExpenseItem from '../Expenses/ExpenseItem';
+
 import './ExpenseForm.css';
-import NewExpense from './NewExpense';
+
 
 const ExpenseForm = (props) => {
      const [title,setEnteredTitle]=useState("")
@@ -47,6 +47,11 @@ const ExpenseForm = (props) => {
         setEnteredAmount("")
           setEnteredDate("")
           setEnteredTitle("")
+          props.showButton("hide")
+    }
+
+    const show = ()=>{
+      props.showButton("hide")
     }
   return (
     <form onSubmit={formSubmit}>
@@ -64,7 +69,9 @@ const ExpenseForm = (props) => {
           <input type='date' id="date" min='2019-01-01'value={date} max='2022-12-31' onChange={datechg}/>
         </div>
       </div>
+   
       <div className='new-expense__actions'>
+      <button type='reset' onClick={show}>Cancel</button>
         <button type='submit' >Add Expense</button>
       </div>
     </form>

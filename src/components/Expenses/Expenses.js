@@ -8,10 +8,14 @@ import ExpensesFilter from './ExpensesFilter';
 function Expenses(props) {
  
 
-  const [filteredYear, setFilteredYear] = useState('2020');
+  const [filteredYear, setFilteredYear] = useState('All');
 
   const filterChangeHandler = selectedYear => {
-    setFilteredYear(selectedYear);
+    setFilteredYear((prev)=>{
+      return selectedYear
+    });
+    
+    props.giveittheyear(selectedYear);
   };
 
 

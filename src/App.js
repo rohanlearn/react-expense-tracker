@@ -26,11 +26,17 @@ function App() {
     },
   ];
   const [newExpense,updateExpense] = useState(expenses)
+  
+  let filterarray = [...expenses]
   const AddExpenseHandler= (data)=>{
     
     
     
      updateExpense((prev)=>{
+      filterarray=[...filterarray,data]
+      expenses = [...expenses,data]
+
+        
         return [...prev,data]
         
         
@@ -39,12 +45,23 @@ function App() {
 
   }
 
+
+  const  getFilteredyear=(year)=>{
+    if(year!="All"){
+      updateExpense(filterarray.filter(item=>item.date.getFullYear()==year)) 
+
+    }else{
+      updateExpense(filterarray)
+    }
+   
+  }
+
   
   return (
     <div>
    
       <NewExpense sendtoApp={AddExpenseHandler}/>
-      <Expenses items={newExpense} />
+      <Expenses items={newExpense} giveittheyear = {getFilteredyear}/>
     </div>
   );
 }

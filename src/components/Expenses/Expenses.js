@@ -18,7 +18,7 @@ function Expenses(props) {
     
   };
   let filteredexpenses = props.items
-  if(filteredYear!="All"){
+  if(filteredYear!=="All"){
     filteredexpenses = props.items.filter((item)=>{
       return item.date.getFullYear().toString() === filteredYear;
     })
@@ -34,7 +34,7 @@ function Expenses(props) {
       />
     ));
 
-  }else if(filteredexpenses.length == 1){
+  }else if(filteredexpenses.length === 1){
     content = [...filteredexpenses.map((item) => (
       <ExpenseItem
         key={item.id} // Make sure to assign a unique key to each item

@@ -13,13 +13,13 @@ const NewExpense = (props) => {
     props.sendtoApp(data);
   };
   let showItBro = (thing)=>{
-    if(thing=="show"){
+    if(thing==="show"){
       updateContent(<div className='new-expense'>
       <ExpenseForm onSave={saveExpenseData} showButton={showItBro}/>
     </div>
         )
       
-    }else if(thing=="hide"){
+    }else if(thing==="hide"){
       updateContent(<div className='new-expense'>
       <FormButton showForm={showItBro}/>
     </div>)

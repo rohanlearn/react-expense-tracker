@@ -9,7 +9,7 @@ function FormButton(props) {
     };
     return (
      
-            <div className='new-expense__actions'>
+            <div className='new-expense__action'>
         <button  onClick={sendingButtonSignal}>
             Add Expense
             

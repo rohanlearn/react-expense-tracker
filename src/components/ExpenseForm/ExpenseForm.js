@@ -36,7 +36,7 @@ const ExpenseForm = (props) => {
     
     const formSubmit = (e)=>{
       e.preventDefault();
-    if (title.trim()=="" || amount.trim()=="" || date.trim()=="" ){
+    if (title.trim()==="" || amount.trim()==="" || date.trim()==="" ){
       return
     }
 
